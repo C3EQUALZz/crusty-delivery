@@ -1,0 +1,91 @@
+[tool.poetry]
+name = "crusty-delivery"
+version = "0.1.0"
+description = "backend api written with fastapi for crusty-delivery"
+authors = ["c3equalz <dan.kovalev2013@gmail.com>"]
+license = "GNU GENERAL PUBLIC LICENSE"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+keywords = [
+    "api",
+    "backend",
+    "fastapi"
+]
+
+[project.urls]
+Homepage = "https://github.com/Maclovi/tgloader"
+Repository = "https://github.com/Maclovi/tgloader"
+Documentation = "https://github.com/Maclovi/tgloader"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.dev-dependencies]
+testing = [
+    "pytest<8.0.0,>=7.4.3",
+    "pytest-asyncio",
+    "mypy<2.0.0,>=1.8.0",
+    "ruff<1.0.0,>=0.2.2",
+    "pre-commit<4.0.0,>=3.6.2",
+    "types-passlib<2.0.0.0,>=1.7.7.20240106",
+    "coverage<8.0.0,>=7.4.3"
+]
+
+[tool.mypy]
+strict = true
+exclude = ["venv", ".venv", "alembic"]
+
+[tool.ruff]
+line-length = 80
+fix = true
+target-version = "py312"
+exclude = ["alembic"]
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+    "ARG001", # unused arguments in functions
+    "PT",    # flake8-pytest-style    https://docs.astral.sh/ruff/rules/#flake8-pytest-style-pt
+    "PTH",   # flake8-use-pathlib     https://docs.astral.sh/ruff/rules/#flake8-use-pathlib-pth
+    "TCH",   # flake8-type-checking   https://docs.astral.sh/ruff/rules/#flake8-type-checking-tch
+    "C90",   # mccabe                 https://docs.astral.sh/ruff/rules/#mccabe-c90
+    "T20",   # flake8-print           https://docs.astral.sh/ruff/rules/#flake8-print-t20
+    "SIM",   # flake8-simplify        https://docs.astral.sh/ruff/rules/#flake8-simplify-sim
+    "RUF",   # Ruff-specific rules    https://docs.astral.sh/ruff/rules/#ruff-specific-rules-ruf
+    "PERF",  # Perflint               https://docs.astral.sh/ruff/rules/#perflint-perf
+    "ASYNC", # flake8-async           https://docs.astral.sh/ruff/rules/#flake8-async-async
+]
+
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "W191",  # indentation contains tabs
+    "B904",  # Allow raising exceptions without from e, for HTTPException
+]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.lint.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
