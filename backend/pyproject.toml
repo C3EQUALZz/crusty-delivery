@@ -21,18 +21,17 @@ Repository = "https://github.com/Maclovi/tgloader"
 Documentation = "https://github.com/Maclovi/tgloader"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
+fastapi = {extras = ["standart"], version = "^0.115.0"}
 
-[tool.poetry.dev-dependencies]
-testing = [
-    "pytest<8.0.0,>=7.4.3",
-    "pytest-asyncio",
-    "mypy<2.0.0,>=1.8.0",
-    "ruff<1.0.0,>=0.2.2",
-    "pre-commit<4.0.0,>=3.6.2",
-    "types-passlib<2.0.0.0,>=1.7.7.20240106",
-    "coverage<8.0.0,>=7.4.3"
-]
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pytest-asyncio = "^0.24.0"
+mypy = "^1.11.2"
+ruff = "^0.6.8"
+pre-commit = "^3.8.0"
+coverage = "^7.6.1"
+types-passlib = "^1.7.7.20240819"
 
 [tool.mypy]
 strict = true
