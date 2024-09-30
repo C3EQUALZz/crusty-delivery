@@ -83,12 +83,12 @@ interface Asset {
   parcel_icon: string;
 }
 
-interface MenuItem {
+export interface MenuItem {
   menu_name: string;
   menu_image: string;
 }
 
-interface FoodItem {
+export interface FoodItem {
   _id: string;
   name: string;
   image: string;
