@@ -13,9 +13,9 @@ export const Navbar: React.FC<NavbarProps> = ({setShowLogin}) => {
 
     return (
         <div className="navbar">
-            <img src={assets.logo} alt="" className="logo"/>
+            <Link to='/'><img src={assets.logo} alt="Logo of Tomato" className="logo"/></Link>
             <ul className="navbar-menu">
-                <Link to="/" onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>home</Link>
+            <Link to="/" onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>home</Link>
                 <a href="#explore-menu" onClick={() => setMenu("menu")}
                    className={menu === "menu" ? "active" : ""}>menu</a>
                 <a href="#app-download" onClick={() => setMenu("mobile-app")}
@@ -26,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({setShowLogin}) => {
             <div className="navbar-right">
                 <img src={assets.search_icon} alt=""/>
                 <div className="navbar-search-icon">
-                    <img src={assets.basket_icon} alt="" className="search-icon"/>
+                    <Link to="/cart"><img src={assets.basket_icon} alt="Logo of cart" className="search-icon"/></Link>
                     <div className="dot"></div>
                 </div>
                 <button onClick={() => setShowLogin(true)}>sign in</button>
