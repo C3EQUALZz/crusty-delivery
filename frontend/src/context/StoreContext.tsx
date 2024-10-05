@@ -2,14 +2,14 @@ import React, { createContext, useState } from "react";
 import { FoodItem, food_list } from "../assets/assets.ts";
 
 interface StoreContextValue {
-  food_list: FoodItem[];
+  foodList: FoodItem[];
   cartItems: Record<string, number>;
   addToCart: (itemId: string) => void;
   removeFromCart: (itemId: string) => void;
 }
 
 const defaultContextValue: StoreContextValue = {
-  food_list: [],
+  foodList: [],
   cartItems: {},
   addToCart: () => {},
   removeFromCart: () => {}
@@ -33,7 +33,7 @@ const StoreContextProvider = (props: { children: React.ReactNode }) => {
   };
 
   const contextValue: StoreContextValue = {
-    food_list,
+    foodList: food_list,
     cartItems,
     addToCart,
     removeFromCart
