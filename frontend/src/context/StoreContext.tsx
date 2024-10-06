@@ -6,13 +6,15 @@ interface StoreContextValue {
   cartItems: Record<string, number>;
   addToCart: (itemId: string) => void;
   removeFromCart: (itemId: string) => void;
+  getTotalCartAmount: () => number;
 }
 
 const defaultContextValue: StoreContextValue = {
   foodList: [],
   cartItems: {},
   addToCart: () => {},
-  removeFromCart: () => {}
+  removeFromCart: () => {},
+  getTotalCartAmount: () => 1
 };
 
 export const StoreContext = createContext<StoreContextValue>(defaultContextValue);
@@ -32,11 +34,28 @@ const StoreContextProvider = (props: { children: React.ReactNode }) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
+  const getTotalCartAmount = () => {
+    let totalAmount = 0;
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+
+        let itemInfo = food_list.find((product) => product._id === item);
+
+        if (itemInfo !== undefined) {
+          totalAmount += itemInfo.price * cartItems[item];
+        }
+
+      }
+    }
+    return totalAmount;
+  }
+
   const contextValue: StoreContextValue = {
     foodList: food_list,
     cartItems,
     addToCart,
-    removeFromCart
+    removeFromCart,
+    getTotalCartAmount
   };
 
   return (
