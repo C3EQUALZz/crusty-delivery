@@ -9,7 +9,7 @@ interface ExploreMenuProps {
 
 export const ExploreMenu: React.FC<ExploreMenuProps> = ({category, setCategory}) => {
     return (
-        <div className="explore-menu">
+        <div className="explore-menu" id="explore-menu">
             <h1>Explore our menu</h1>
             <p className="explore-menu-text">Choose from a diverse menu featuring a delectable array of dishes crafted
                 with the finest ingredients and

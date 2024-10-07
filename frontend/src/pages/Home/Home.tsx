@@ -3,6 +3,7 @@ import {Header} from "../../components/Header/Header.tsx";
 import {ExploreMenu} from "../../components/ExploreMenu/ExploreMenu.tsx";
 import {useState} from "react";
 import {FoodDisplay} from "../../components/FoodDisplay/FoodDisplay.tsx";
+import {AppDownload} from "../../components/AppDownload/AppDownload.tsx";
 
 export const Home = () => {
 
@@ -13,6 +14,7 @@ export const Home = () => {
             <Header/>
             <ExploreMenu category={category} setCategory={setCategory}/>
             <FoodDisplay category={category} />
+            <AppDownload />
         </div>
     )
 }
