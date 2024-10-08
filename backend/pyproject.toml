@@ -47,7 +47,7 @@ exclude = ["venv", ".venv", "alembic"]
 line-length = 80
 fix = true
 target-version = "py312"
-exclude = ["alembic"]
+exclude = ["alembic", "frontend", "Dockerfile", "certs"]
 
 [tool.ruff.lint]
 select = [
