@@ -73,3 +73,5 @@ class Settings(BaseSettings):
     auth_jwt: AuthJWT = AuthJWT()
     redis: RedisSettings = RedisSettings()
     email: EmailSettings = EmailSettings()
+
+settings = Settings()
