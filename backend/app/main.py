@@ -2,9 +2,11 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
-    title="API для доставок еды",
+    title="API for crusty delivery",
     version="1.0.0",
     root_path="/api",
+    description="CRUD Restful API for crusty delivery written with DDD pattern",
+    debug=True,
 )
 
 
