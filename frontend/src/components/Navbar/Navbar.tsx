@@ -31,7 +31,7 @@ export const Navbar: React.FC<NavbarProps> = ({setShowLogin}) => {
                     <Link to="/cart"><img src={assets.basket_icon} alt="Logo of cart" className="search-icon"/></Link>
                     <div className={getTotalCartAmount() === 0 ? "": "dot"}></div>
                 </div>
-                <button onClick={() => setShowLogin(true)}>sign in</button>
+                <button onClick={() => setShowLogin(true)}>sign up</button>
             </div>
         </div>
     )
